@@ -98,6 +98,11 @@ nav.links a:hover{color:var(--ink)}
 .hero h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:900;font-stretch:75%;text-transform:uppercase;line-height:.92;margin-top:14px}
 .hero h1 em{font-style:normal;color:var(--door)}
 .hero .lede{margin-top:22px;font-size:1.15rem}
+.savedline{display:flex;gap:10px;align-items:baseline;margin-top:22px;padding:12px 16px;background:var(--fog);border:1px solid var(--line);border-left:4px solid var(--good);border-radius:8px;text-decoration:none;color:var(--ink);font-size:1rem;max-width:560px}
+.savedline b{color:var(--good);font-size:1.15rem}
+.savedcheck{color:var(--good);font-weight:800}
+.savedlink{font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--door);white-space:nowrap}
+.savedline:hover .savedlink{color:var(--door)}
 .proof{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;color:var(--ink-2);font-size:.95rem}
 .proof span::before{content:"✓";color:var(--good);font-weight:700;margin-right:7px}
 .valcard{background:var(--fog);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3vw,30px);display:grid;gap:16px}
@@ -426,6 +431,7 @@ footer .wrap{display:block}
         <a class="btn btn-door" href="#contact">Schedule a free 15-minute call</a>
         <a class="textlink" href="#plan">See how it works</a>
       </div>
+      <a class="savedline" href="#sold"><span class="savedcheck" aria-hidden="true">✓</span><span><b class="num" data-savetotal>$79,625</b> kept by Red Door sellers in recent sales. <span class="savedlink">See the homes →</span></span></a>
       <div class="proof">
         <span>One agent, start to finish</span>
         <span>Cancel-anytime listing</span>
@@ -502,7 +508,7 @@ footer .wrap{display:block}
         <h2>Real Maine homes. Real savings.</h2>
       </div>
       <div class="savetotal">
-        <span class="savetotal-num num">$79,625</span>
+        <span class="savetotal-num num" data-savetotal>$79,625</span>
         <span class="savetotal-lab">kept by Red Door sellers on these 6 sales alone, compared with a 6% total commission</span>
       </div>
     </div>
@@ -956,6 +962,11 @@ footer .wrap{display:block}
   }
   ['m-price','m-down','m-rate','m-term'].forEach(id => $(id).addEventListener('input', mort));
   mort();
+
+  (function(){
+    const kept=[...document.querySelectorAll('.sold-kept b')].map(b=>+b.textContent.replace(/[^0-9]/g,''));
+    if(kept.length){ const t=fmt(kept.reduce((a,b)=>a+b,0)); document.querySelectorAll('[data-savetotal]').forEach(e=>e.textContent=t); }
+  })();
 
   const mb = $('menuBtn'), dr = $('drawer');
   const setMenu = o => { dr.classList.toggle('open', o); mb.setAttribute('aria-expanded', o); mb.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); };
