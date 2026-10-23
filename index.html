@@ -162,6 +162,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--door);outline:none}
 .sold-photo{position:relative;overflow:hidden}
 .sold-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .photo-sold{position:absolute;top:12px;left:12px;background:var(--door);color:var(--door-ink);font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:4px 10px;border-radius:4px}
+.savetotal{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;width:100%;padding-top:14px;border-top:1px solid var(--line)}
+.savetotal-num{font-family:var(--f-display);font-stretch:75%;font-weight:900;font-size:clamp(2.6rem,5vw,3.6rem);line-height:1;color:var(--good)}
+.savetotal-lab{font-size:1rem;color:var(--ink-2);max-width:46ch}
 .sold-meta{color:var(--ink-2);font-size:.9rem}
 .sold-wins{font-size:.92rem;color:var(--ink)}
 .sold-wins b{color:var(--door)}
@@ -497,6 +500,10 @@ footer .wrap{display:block}
       <div>
         <p class="eyebrow">Recently sold</p>
         <h2>Real Maine homes. Real savings.</h2>
+      </div>
+      <div class="savetotal">
+        <span class="savetotal-num num">$79,625</span>
+        <span class="savetotal-lab">kept by Red Door sellers on these 6 sales alone, compared with a 6% total commission</span>
       </div>
     </div>
     <div class="soldgrid">
