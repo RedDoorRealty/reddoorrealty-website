@@ -1,2 +1,46 @@
 [build]
   publish = "."
+
+# Old Placester pages -> matching sections of the new site
+[[redirects]]
+  from = "/about/*"
+  to = "/#guide"
+  status = 301
+[[redirects]]
+  from = "/3-5-listing-package/*"
+  to = "/#included"
+  status = 301
+[[redirects]]
+  from = "/testimonials/*"
+  to = "/#reviews"
+  status = 301
+[[redirects]]
+  from = "/testimonial/*"
+  to = "/#reviews"
+  status = 301
+[[redirects]]
+  from = "/contact/*"
+  to = "/#contact"
+  status = 301
+[[redirects]]
+  from = "/home-worth/*"
+  to = "/#savings"
+  status = 301
+[[redirects]]
+  from = "/mortgage-calculator/*"
+  to = "/#resources"
+  status = 301
+[[redirects]]
+  from = "/seller-resources/*"
+  to = "/#resources"
+  status = 301
+[[redirects]]
+  from = "/buyer-resources/*"
+  to = "/#resources"
+  status = 301
+
+# Anything else from the old site goes to the home page
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 301
