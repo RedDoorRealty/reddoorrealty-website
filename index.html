@@ -310,6 +310,13 @@ details p{padding-bottom:18px;color:var(--ink-2);max-width:70ch}
 .idx-alert p{opacity:.85;font-size:.95rem}
 .idx-disclaimer{margin-top:16px}
 @media (max-width:860px){.idx-wrap{grid-template-columns:1fr}.idx-slot,.idx-placeholder{min-height:280px}}
+.alerts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.alerts-copy h2{margin:14px 0 18px}
+.alerts-list{margin-top:22px}
+.alerts-sub{margin-top:26px}
+.searchbox{display:grid;gap:10px;justify-items:start;margin-top:22px;padding:20px;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--door);border-radius:10px}
+.alerts-form{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3vw,30px);display:grid;gap:14px}
+@media (max-width:860px){.alerts{grid-template-columns:1fr}}
 .regions{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .region{background:var(--paper);border:1px solid var(--line);border-top:4px solid var(--door);border-radius:10px;padding:20px;display:grid;gap:8px;align-content:start}
 .region h3{font-size:1.2rem}
@@ -791,35 +798,48 @@ footer .wrap{display:block}
   </div>
 </section>
 
-<!-- SEARCH HOMES (MLS / IDX) -->
+<!-- LISTING ALERTS (MLS client portal) -->
 <section class="alt" id="search">
   <div class="wrap">
-    <div class="head">
-      <p class="eyebrow">Search homes for sale</p>
-      <h2>Every Maine listing, updated daily</h2>
-      <p class="lede">Search all homes for sale on the Maine Listings MLS, from every brokerage. Save favorites, then call Randy to see any of them.</p>
-    </div>
-    <div class="idx-wrap">
-      <!-- =========================================================
-           IDX / MLS SEARCH GOES HERE
-           Paste the embed code from your IDX provider (approved by
-           Maine Listings) inside the div below, replacing the
-           placeholder content. Keep id="idx-search".
-           ========================================================= -->
-      <div id="idx-search" class="idx-slot">
-        <div class="idx-placeholder">
-          <span class="idx-badge">MLS search</span>
-          <h3>Live Maine Listings search will appear here</h3>
-          <p>Search by town, price, bedrooms and more, with photos and maps for every listing.</p>
+    <div class="alerts">
+      <div class="alerts-copy">
+        <p class="eyebrow">Buying a home?</p>
+        <h2>Search every home for sale in Maine</h2>
+        <p class="lede">Search every home for sale in Maine yourself, anytime. Or let Randy set up a personal MLS alert so new matches land in your inbox the moment they hit the market.</p>
+        <div class="searchbox">
+          <a class="btn btn-door" href="https://mainelistings.com/listings" target="_blank" rel="noopener">Search all Maine homes</a>
+          <p class="fine">Opens the official Maine Listings MLS search in a new tab. Found one you like? Call or text Randy at (207) 712-2958 to see it.</p>
         </div>
+        <p class="alerts-sub"><b>With a free listing alert from Randy, you also get:</b></p>
+        <ul class="success alerts-list" style="margin-top:10px">
+          <li>Every brokerage's listings, not just Red Door's</li>
+          <li>New homes, price drops and status changes, as they happen</li>
+          <li>Your own page to save favorites and share them with Randy</li>
+          <li>Free, with no obligation</li>
+        </ul>
       </div>
-      <aside class="idx-alert">
-        <h3>Get new listings first</h3>
-        <p>Tell Randy the towns, price range and must-haves you're after. He'll set up an MLS alert so matching homes reach your inbox the day they hit the market.</p>
-        <a class="btn btn-door" href="#contact">Set up my listing alert</a>
-      </aside>
+      <form class="alerts-form" id="alertForm" name="listing-alert" method="POST" data-netlify="true" netlify-honeypot="company" novalidate>
+        <input type="hidden" name="form-name" value="listing-alert"><input type="hidden" name="subject" value="New Red Door lead: listing alert request"><p hidden><label>Company<input name="company"></label></p>
+        <h3>Or get new listings by email</h3>
+        <div class="row2">
+          <label for="a-name">Your name<input id="a-name" name="name" autocomplete="name" required></label>
+          <label for="a-email">Email<input id="a-email" name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label for="a-phone">Phone (optional)<input id="a-phone" name="phone" type="tel" autocomplete="tel"></label>
+        <label for="a-towns">Towns or areas<input id="a-towns" name="towns" placeholder="e.g. Portland, Falmouth, Gorham" required></label>
+        <div class="row2">
+          <label for="a-min">Price from<select id="a-min" name="price-min"><option>No minimum</option><option>$200,000</option><option>$300,000</option><option>$400,000</option><option>$500,000</option><option>$600,000</option><option>$750,000</option><option>$1,000,000</option></select></label>
+          <label for="a-max">Price to<select id="a-max" name="price-max"><option>No maximum</option><option>$300,000</option><option>$400,000</option><option selected>$500,000</option><option>$600,000</option><option>$750,000</option><option>$1,000,000</option><option>$1,500,000+</option></select></label>
+        </div>
+        <div class="row2">
+          <label for="a-beds">Bedrooms<select id="a-beds" name="beds"><option>Any</option><option>1+</option><option>2+</option><option selected>3+</option><option>4+</option><option>5+</option></select></label>
+          <label for="a-when">Buying within<select id="a-when" name="timing"><option>3 months</option><option>3 to 6 months</option><option>6 to 12 months</option><option>Just looking</option></select></label>
+        </div>
+        <label for="a-must">Must-haves (optional)<textarea id="a-must" name="must-haves" rows="2" placeholder="Garage, waterfront, single-level, good schools..."></textarea></label>
+        <button class="btn btn-door" type="submit">Send me new listings</button>
+        <div class="ok" id="a-ok" hidden></div>
+      </form>
     </div>
-    <p class="fine idx-disclaimer">Listing data is derived in whole or in part from Maine Listings (Maine Real Estate Information System, Inc.) and is for consumers' personal, non-commercial use. All data should be independently verified.</p>
   </div>
 </section>
 
@@ -996,6 +1016,7 @@ footer .wrap{display:block}
   }
   wire('value','v-ok','Thanks! Randy will get back to you with your home value within one business day.','Your message didn\'t go through. Please call or text Randy at (207) 712-2958.');
   wire('contactForm','c-ok','Thanks! Randy will call you back the same business day.','Your message didn\'t go through. Please call or text Randy at (207) 712-2958.');
+  wire('alertForm','a-ok','Thanks! Randy will set up your listing alert and email you within one business day.','Your request didn\'t go through. Please call or text Randy at (207) 712-2958.');
 })();
 </script>
 
