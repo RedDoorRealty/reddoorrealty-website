@@ -98,11 +98,11 @@ nav.links a:hover{color:var(--ink)}
 .hero h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:900;font-stretch:75%;text-transform:uppercase;line-height:.92;margin-top:14px}
 .hero h1 em{font-style:normal;color:var(--door)}
 .hero .lede{margin-top:22px;font-size:1.15rem}
-.savedline{display:flex;gap:10px;align-items:baseline;margin-top:22px;padding:12px 16px;background:var(--fog);border:1px solid var(--line);border-left:4px solid var(--good);border-radius:8px;text-decoration:none;color:var(--ink);font-size:1rem;max-width:560px}
-.savedline b{color:var(--good);font-size:1.15rem}
-.savedcheck{color:var(--good);font-weight:800}
-.savedlink{font-weight:700;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--door);white-space:nowrap}
-.savedline:hover .savedlink{color:var(--door)}
+.savedline{display:flex;gap:14px;align-items:center;margin-top:24px;padding:16px 20px;background:var(--good);border-radius:10px;text-decoration:none;color:#fff;font-size:1.05rem;line-height:1.35;max-width:580px;box-shadow:0 8px 24px rgba(47,107,79,.28);transition:transform .15s}
+.savedline:hover{transform:translateY(-2px)}
+.savedline b{display:block;color:#fff;font-family:var(--f-display);font-stretch:75%;font-weight:900;font-size:clamp(2rem,4vw,2.6rem);line-height:1;margin-bottom:2px}
+.savedcheck{flex:none;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--good);display:grid;place-items:center;font-weight:900;font-size:1.3rem}
+.savedlink{display:inline-block;margin-top:4px;font-weight:800;color:#fff;text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:2px;white-space:nowrap}
 .proof{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;color:var(--ink-2);font-size:.95rem}
 .proof span::before{content:"✓";color:var(--good);font-weight:700;margin-right:7px}
 .valcard{background:var(--fog);border:1px solid var(--line);border-radius:10px;padding:clamp(20px,3vw,30px);display:grid;gap:16px}
