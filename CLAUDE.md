@@ -19,7 +19,7 @@ Each Netlify production deploy (each push to `main`) uses 15 Netlify credits. Ma
 - Fee: 3.5% total commission = 1.5% listing fee + 2% offered to the buyer's agent. Compare against the Maine AVERAGE total commission of 5.03% (2.59% listing + 2.44% buyer side; Clever Real Estate survey, Aug 2026), never against 6% as if typical. On a $500,000 home: $25,150 vs $17,500 = $7,650 kept. Seller kept on a sold card = 1.53% of the sale price. Cite the source next to the figure. Buyer-agent compensation is negotiable; say so where relevant.
 - Tagline: "Full Service. Fair Fee."
 - Licensed since 2004. Designated Broker. University of Southern Maine, School of Business.
-- Phone (207) 712-2958 · Email RandyCaronRealtor@gmail.com · 15 Northwood Dr, Portland, ME 04103.
+- Phone (207) 712-2958 · Email Randy@reddoorme.com · 15 Northwood Dr, Portland, ME 04103.
 - Serves Greater Portland, Southern Maine (York County), the Lakes Region, the Midcoast and Central Maine (Lewiston-Auburn).
 - Savings calculator starts at $500,000 (about Portland's median, Redfin early 2026).
 - "Search homes" links open the public Maine Listings search in a new tab: https://mainelistings.com/listings?mls_status=Active,Active+Under+Contract,Coming+Soon+/+No+Show,Pending
